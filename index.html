@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="imagenes/imagen/0.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>MEMORY GAME</h1>
+      <p class="sub">Beta 1.2</p>
+    </header>
+    <section class="contenedor-menu menu-principal">
+      <button class="btn-menu" id="btn-jugar">JUGAR</button>
+      <button class="btn-menu" id="btn-opciones">OPCIONES</button>
+      <button class="btn-menu" id="btn-salir">VER CAMBIOS</button>
+    </section>
+    <section class="contenedor-menu menu-opciones invisible">
+      <button class="btn-menu menu-opciones-volver">Volver</button>
+      <button class="btn-menu btn-opciones2">Activar Música</button>
+      <button class="btn-menu btn-opciones3">Desactivar Sonidos</button>
+    </section>
+
+    <section class="contenedor invisible pantalla-juego">
+      <div class="marcador">
+        <div class="botones">
+          <button class="btn-pausa invisible">Pausa</button>
+          <button id="btnMenu" class="btn-pausa">Menú</button>
+        </div>
+        <div class="contador cuadrado-azul">1:20</div>
+      </div>
+      <div class="puntaje cuadrado-azul">Puntaje: 0</div>
+      <a class="link sub" id="btn-puntaje" href="#mostrar-puntos"
+        >Ver puntajes</a
+      >
+      <div class="juego">
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <div class="cuadrado-azul img-comun carta">
+          <img class="img1 frente" src="imagenes/imagen/0.png" />
+          <img class="img2 detras" src="" />
+        </div>
+        <span id="final"></span>
+      </div>
+      <button class="btn invisible">Iniciar</button>
+    </section>
+    <section>
+      <div class="ventana" id="cambios">
+        <figure>
+          <a href="#" class="cerrar"></a>
+          <figcaption>
+            <p id="TituloCambios">Actualizaciones:</p>
+            <ul>
+              Pendiente:
+              <li>Lista de puntajes online</li>
+            </ul>
+            <ul>
+              Beta 1.2
+              <li>Agregado el Menú</li>
+            </ul>
+            <ul>
+              Beta 1.1
+              <li>>Agregada música de fondo</li>
+              <li>>Aspectos visuales cambiados</li>
+              <li>>Aumento del tiempo total</li>
+              <li>>Aumento del tiempo al ganar niveles</li>
+              <li>>Corrección de errores</li>
+              <li>>Nivel nuevo agregado</li>
+              <li>>Adaptación de pantalla al nivel</li>
+            </ul>
+            <ul>
+              Beta 1.0:
+              <li>>Agregadas animaciones</li>
+              <li>>Agregados sonidos</li>
+              <li>>Aspectos visuales cambiados</li>
+              <li>>Agregado un apartado para ideas</li>
+              <li>>Solucionado el retraso al tocar la carta</li>
+            </ul>
+            <ul>
+              Alpha 0.6:
+              <li>>Reducido el tiempo al ganar</li>
+              <li>>Aspectos visuales cambiados</li>
+              <li>>Retraso al tocar la carta sin solucionar</li>
+            </ul>
+            <ul>
+              Alpha 0.5:
+              <li>>Corrección de errores</li>
+              <li>>Se gana tiempo al completar un nivel</li>
+              <li>>Nuevo nivel</li>
+              <li>>Mejora de rendimiento</li>
+              <li>>Reducción de tiempo a 1 minuto</li>
+              <li>>Lista de puntajes</li>
+              <li>>Retraso al tocar la carta sin solucionar</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="ventana" id="mostrar-puntos">
+        <figure>
+          <a id="btnCerrar" href="#" class="cerrar"></a>
+          <figcaption class="ventana2">
+            <h2>Puntajes</h2>
+            <form id="formulario" class="puntos-guardados" method="post">
+              <input
+                id="Nombre"
+                class="input"
+                type="text"
+                placeholder="escribe un nombre..."
+                name="nombre"
+                autocomplete="off"
+              />
+              <input class="btn-form" type="submit" name="enviar" />
+              <input
+                id="puntos"
+                class="input"
+                type="hidden"
+                value=""
+                name="puntaje"
+              />
+            </form>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+    <script src="juego.js"></script>
+  </body>
+</html>
